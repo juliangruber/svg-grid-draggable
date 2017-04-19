@@ -4,6 +4,8 @@ Make an svg element draggable inside the confines of a fixed grid.
 
 ## Usage
 
+![screenshot](screenshot.png)
+
 Using this library to move [svg-midi-notes](https://github.com/juliangruber/svg-midi-note) instead a [svg-midi-grid](https://github.com/juliangruber/svg-midi-grid):
 
 ```js
