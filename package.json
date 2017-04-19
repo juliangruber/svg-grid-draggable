@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "repository": "juliangruber/svg-grid-draggable",
-  "description": "",
+  "description": "Make an svg element draggable inside the confines of a fixed grid",
   "scripts": {
     "example": "beefy example.js",
     "test": "prettier-standard-formatter *.js && standard"
