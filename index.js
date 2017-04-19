@@ -42,7 +42,7 @@ module.exports = () => {
     c.state.x = Math.round((ev.offsetX - offsetX) / c.props.cellWidth) * c.props.cellWidth
     c.state.y = Math.round((ev.offsetY - offsetY) / c.props.cellHeight) * c.props.cellHeight
     c._element.setAttribute('transform', `translate(${c.state.x}, ${c.state.y})`)
-    c.props.onmove()
+    c.props.onmove(c.state.x, c.state.y)
   }
   return c
 }
