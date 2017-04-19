@@ -1,0 +1,21 @@
+{
+  "name": "svg-grid-draggable",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "juliangruber/svg-grid-draggable",
+  "description": "",
+  "scripts": {
+    "example": "beefy example.js",
+    "test": "prettier-standard-formatter *.js && standard"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "beefy": "^2.1.8",
+    "bel": "^4.6.0",
+    "browserify": "^14.3.0",
+    "prettier-standard-formatter": "^0.222222222222222.333333333333333",
+    "standard": "^10.0.2",
+    "svg-midi-grid": "^2.2.0",
+    "svg-midi-note": "^4.2.1"
+  }
+}
