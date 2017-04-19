@@ -11,14 +11,17 @@ module.exports = () => {
       y: 0
     }
   })
-  c.on('render', () => html`
+  c.on(
+    'render',
+    () => html`
     <g
       transform="translate(${c.props.x}, ${c.props.y})"
       onmousedown=${dragstart}
     >
       ${c.props.el}
     </g>
-  `)
+  `
+  )
   let offsetX = 0
   let offsetY = 0
   const dragstart = ev => {
@@ -32,16 +35,24 @@ module.exports = () => {
   const dragend = ev => {
     window.removeEventListener('mouseup', dragend)
     window.removeEventListener('mousemove', dragmove)
-    c.emit('render', Object.assign(c.props, {
-      x: c.state.x,
-      y: c.state.y
-    }))
+    c.emit(
+      'render',
+      Object.assign(c.props, {
+        x: c.state.x,
+        y: c.state.y
+      })
+    )
     c.props.onend(c.state.x, c.state.y)
   }
   const dragmove = ev => {
-    c.state.x = Math.round((ev.offsetX - offsetX) / c.props.cellWidth) * c.props.cellWidth
-    c.state.y = Math.round((ev.offsetY - offsetY) / c.props.cellHeight) * c.props.cellHeight
-    c._element.setAttribute('transform', `translate(${c.state.x}, ${c.state.y})`)
+    c.state.x = Math.round((ev.offsetX - offsetX) / c.props.cellWidth) *
+      c.props.cellWidth
+    c.state.y = Math.round((ev.offsetY - offsetY) / c.props.cellHeight) *
+      c.props.cellHeight
+    c._element.setAttribute(
+      'transform',
+      `translate(${c.state.x}, ${c.state.y})`
+    )
     c.props.onmove(c.state.x, c.state.y)
   }
   return c

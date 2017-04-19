@@ -18,12 +18,7 @@ const onend = (x, y) => console.log(`on end (${x}, ${y})`)
 
 const el = html`
   <svg width=400 height=200>
-    ${grid.render({
-      height: 201,
-      width: 401,
-      cellHeight,
-      cellWidth
-    })}
+    ${grid.render({ height: 201, width: 401, cellHeight, cellWidth })}
     ${draggable.render({
       x: 80,
       y: 100,
