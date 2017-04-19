@@ -45,10 +45,15 @@ module.exports = () => {
     c.props.onend(c.state.x, c.state.y)
   }
   const dragmove = ev => {
+    const prev = {
+      x: c.state.x,
+      y: c.state.y
+    }
     c.state.x = Math.round((ev.offsetX - offsetX) / c.props.cellWidth) *
       c.props.cellWidth
     c.state.y = Math.round((ev.offsetY - offsetY) / c.props.cellHeight) *
       c.props.cellHeight
+    if (c.state.x === prev.x && c.state.y === prev.y) return
     c._element.setAttribute(
       'transform',
       `translate(${c.state.x}, ${c.state.y})`
