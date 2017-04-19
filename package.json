@@ -8,10 +8,12 @@
     "example": "beefy example.js",
     "test": "prettier-standard-formatter *.js && standard"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bel": "^4.6.0",
+    "microcomponent": "^3.1.0"
+  },
   "devDependencies": {
     "beefy": "^2.1.8",
-    "bel": "^4.6.0",
     "browserify": "^14.3.0",
     "prettier-standard-formatter": "^0.222222222222222.333333333333333",
     "standard": "^10.0.2",

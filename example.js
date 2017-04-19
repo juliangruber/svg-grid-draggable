@@ -3,8 +3,10 @@
 const html = require('bel')
 const Note = require('svg-midi-note')
 const Grid = require('svg-midi-grid')
+const Draggable = require('.')
 
 const note = Note()
+const draggable = Draggable()
 const grid = new Grid()
 
 const el = html`
@@ -15,12 +17,14 @@ const el = html`
       cellHeight: 10,
       cellWidth: 20
     })}
-    ${note.render({
-      height: 10,
-      width: 20,
-      velocity: 1,
+    ${draggable.render({
       x: 80,
-      y: 100
+      y: 100,
+      el: note.render({
+        height: 10,
+        width: 20,
+        velocity: 1
+      })
     })}
   </svg>
 `
