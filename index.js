@@ -15,6 +15,8 @@ module.exports = () => {
   `)
   let offsetX = 0
   let offsetY = 0
+  let x = 0
+  let y = 0
   const dragstart = ev => {
     offsetX = ev.offsetX - c.props.x
     offsetY = ev.offsetY - c.props.y
@@ -25,13 +27,11 @@ module.exports = () => {
   const dragend = ev => {
     window.removeEventListener('mouseup', dragend)
     window.removeEventListener('mousemove', dragmove)
-    const x = ev.offsetX - offsetX
-    const y = ev.offsetY - offsetY
     c.emit('render', Object.assign(c.props, { x, y }))
   }
   const dragmove = ev => {
-    const x = ev.offsetX - offsetX
-    const y = ev.offsetY - offsetY
+    x = ev.offsetX - offsetX
+    y = ev.offsetY - offsetY
     c._element.setAttribute('transform', `translate(${x}, ${y})`)
   }
   return c
