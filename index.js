@@ -35,7 +35,7 @@ module.exports = () => {
   const dragend = ev => {
     window.removeEventListener('mouseup', dragend)
     window.removeEventListener('mousemove', dragmove)
-    c.props.onend(c.state.x, c.state.y)
+    c.props.onend({ x: c.state.x, y: c.state.y })
   }
   const dragmove = ev => {
     const prev = {
@@ -51,7 +51,7 @@ module.exports = () => {
       'transform',
       `translate(${c.state.x}, ${c.state.y})`
     )
-    c.props.onmove(c.state.x, c.state.y)
+    c.props.onmove({ x: c.state.x, y: c.state.y })
   }
   return c
 }

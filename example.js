@@ -20,7 +20,7 @@ const state = {
 
 const onstart = () => console.log('on start')
 const onmove = () => console.log('on move')
-const onend = (x, y) => {
+const onend = ({ x, y }) => {
   state.x = x
   state.y = y
   console.log(`on end (${x}, ${y})`)
