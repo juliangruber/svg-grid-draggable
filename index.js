@@ -28,6 +28,8 @@ module.exports = () => {
   const dragstart = ev => {
     offsetX = ev.offsetX - c.props.x
     offsetY = ev.offsetY - c.props.y
+    c.state.x = c.props.x
+    c.state.y = c.props.y
     c._element.removeAttribute('onmousedown')
     window.addEventListener('mouseup', dragend)
     window.addEventListener('mousemove', dragmove)
