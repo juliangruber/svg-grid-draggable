@@ -5,6 +5,7 @@ const html = require('bel')
 
 module.exports = () => {
   const c = component({
+    name: 'svg-grid-draggable',
     pure: true,
     state: {
       x: 0,
