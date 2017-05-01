@@ -35,13 +35,6 @@ module.exports = () => {
   const dragend = ev => {
     window.removeEventListener('mouseup', dragend)
     window.removeEventListener('mousemove', dragmove)
-    c.emit(
-      'render',
-      Object.assign(c.props, {
-        x: c.state.x,
-        y: c.state.y
-      })
-    )
     c.props.onend(c.state.x, c.state.y)
   }
   const dragmove = ev => {
